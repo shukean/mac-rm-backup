@@ -1,7 +1,7 @@
 #! /bin/sh
 
 tmp=`date +"%Y%m%d.%H"`
-backPath=$HOME/.rm.back/$tmp
+backPath=$HOME/.Trash/$tmp
 curPath=`pwd`
 
 if [ ! -d $backPath ]; then
