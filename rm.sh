@@ -8,20 +8,14 @@ if [ ! -d $backPath ]; then
     mkdir -p $backPath
 fi
 
-args=($*)
 for arg in $*; do
     _tmp=$curPath/$arg
     if [ -e $_tmp ]; then
-        cp -r $_tmp $backPath
+        mv -f $_tmp $backPath
         if [ "$?" -eq '0' ]; then
-            printf '%b\n' "\33[32m[✔]\33[0m copy $arg" >&2
+            printf '%b\n' "\33[32m[✔]\33[0m backup $arg" >&2
         else
-            printf '%b\n' "\33[31m[✘]\33[0m copy fail $arg"
+            printf '%b\n' "\33[31m[✘]\33[0m backup fail $arg"
         fi
     fi
 done
-
-rm -i $*
-
-
-
